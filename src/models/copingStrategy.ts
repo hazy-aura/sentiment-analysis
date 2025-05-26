@@ -5,6 +5,7 @@ export interface CopingStrategy {
   tips: string[];
   activity: string;
   song: string;
+  createdAt: Date;
 }
 
 const copingStrategySchema = new Schema<CopingStrategy>({
@@ -12,6 +13,7 @@ const copingStrategySchema = new Schema<CopingStrategy>({
   tips: [{ type: String }],
   activity: { type: String },
   song: { type: String },
+  createdAt: { type: Date, default: Date.now }
 });
 
 export const CopingStrategyModel = model<CopingStrategy>(
