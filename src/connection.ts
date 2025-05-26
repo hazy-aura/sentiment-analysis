@@ -9,10 +9,8 @@ export const connectToDatabase = async (): Promise<void> => {
         throw new Error("DB_URI is not defined in environment variables");
     }
     try{
-     await mongoose.connect(DB_URI).then(() => {
-        console.log("Connected to the database successfully");
-      }
-     );
+     await mongoose.connect(DB_URI);
+     console.log("Connected to the database successfully");
      
     }
     catch(err){

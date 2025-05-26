@@ -13,7 +13,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Sentiment Analysis Check-In API is running");
+  res.send({
+    message: "Sentiment Analysis Check-In API is running",
+  });
 });
 
 const startServer = async () => {
